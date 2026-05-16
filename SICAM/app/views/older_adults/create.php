@@ -1,0 +1,6 @@
+<?php require __DIR__ . '/../layouts/header.php'; ?>
+<form method="post" action="/SICAM/public/adultos-mayores/guardar" class="row g-2">
+<input type="hidden" name="csrf_token" value="<?= htmlspecialchars(csrf_token()) ?>">
+<div class="col-md-4"><input name="tipo_documento" class="form-control" placeholder="Tipo doc" required></div><div class="col-md-4"><input name="numero_documento" class="form-control" placeholder="Número" required></div><div class="col-md-4"><input name="nombres" class="form-control" placeholder="Nombres" required></div><div class="col-md-4"><input name="apellidos" class="form-control" placeholder="Apellidos" required></div><div class="col-md-4"><input type="date" name="fecha_nacimiento" class="form-control" required></div><div class="col-md-4"><input name="sexo" class="form-control" placeholder="Sexo" required></div><div class="col-md-4"><input name="eps" class="form-control" placeholder="EPS"></div><div class="col-md-4"><input name="estado" class="form-control" value="Activo"></div><div class="col-md-4"><input type="date" name="fecha_ingreso" class="form-control" required></div><div class="col-12"><button class="btn btn-primary">Guardar</button></div>
+</form>
+<?php require __DIR__ . '/../layouts/footer.php'; ?>
