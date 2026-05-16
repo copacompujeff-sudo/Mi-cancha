@@ -1,0 +1,2 @@
+<?php
+class DashboardController{public function index():void{if(empty($_SESSION['user'])) redirect('/SICAM/public/');$db=Database::connection();$stats=['adults'=>(int)$db->query('SELECT COUNT(*) c FROM older_adults WHERE deleted_at IS NULL')->fetch()['c'],'users'=>(int)$db->query('SELECT COUNT(*) c FROM users WHERE status=1')->fetch()['c'],'alerts'=>(int)$db->query('SELECT COUNT(*) c FROM alerts WHERE status="pendiente"')->fetch()['c']];view('dashboard/index',['stats'=>$stats]);}}
